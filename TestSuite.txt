@@ -1,0 +1,9 @@
+1. Registration (Register as a new user, Login, Logout)        -> Done
+2. Create new Shipment (Send, Cash collection, CRP, Exchange)  -> Done
+3. Edit shipment
+4. delete shipment
+5. Print Airway pill
+6. Upload shipment File
+7. Create pickup request
+8. Edit pickup request
+9. Cancel pickup request
