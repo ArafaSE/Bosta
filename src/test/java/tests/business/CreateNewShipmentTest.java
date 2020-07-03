@@ -27,9 +27,9 @@ public class CreateNewShipmentTest extends TestBase {
     @Test(priority = 1)
     public void businessUserCanLogin() throws InterruptedException {
         loginPageObject = new LoginPage(driver);
-        driver.navigate().to(envURL);
+        driver.navigate().to(ENV_URL);
         Thread.sleep(2000);
-        loginPageObject.businessLogin(businessEmail, businessPassword);
+        loginPageObject.businessLogin(BUSINESS_EMAIL, BUSINESS_PASSWORD);
         Thread.sleep(2000);
 
         Assert.assertTrue(driver.getCurrentUrl().contains("shipments"));
@@ -39,16 +39,16 @@ public class CreateNewShipmentTest extends TestBase {
     @Test(dependsOnMethods = "businessUserCanLogin", priority = 2)
     public void businessUserCanCreateSendShipments() {
         newShipmentObject = new CreateNewShipmentPage(driver);
-        driver.navigate().to(envURL + "/shipments/create");
+        driver.navigate().to(ENV_URL + "/shipments/create");
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        newShipmentObject.createNewSendShipment(
+        /*newShipmentObject.createNewSendShipment(
                 receiverName, receiverPhone, receiverAddress, receiverCity, receiverZone,
                 receiverBuilding, receiverFloor, receiverApt, packageType, shipmentNoOfItems,
-                shipmentDescription, shipmentNote, shipmentCOD);
+                shipmentDescription, shipmentNote, shipmentCOD);*/
         // check success message
         shipmentsPageObject = new ShipmentsPage(driver);
         try {
@@ -64,15 +64,15 @@ public class CreateNewShipmentTest extends TestBase {
     @Test(dependsOnMethods = "businessUserCanLogin", priority = 3)
     public void businessUserCanCreateCashCollectionOrder() {
         newShipmentObject = new CreateNewShipmentPage(driver);
-        driver.navigate().to(envURL + "/shipments/create");
+        driver.navigate().to(ENV_URL + "/shipments/create");
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        newShipmentObject.createNewCashCollection(
+        /*newShipmentObject.createNewCashCollection(
                 receiverName, receiverPhone, receiverAddress, receiverCity, receiverZone,
-                receiverBuilding, receiverFloor, receiverApt, shipmentCOD, shipmentNote);
+                receiverBuilding, receiverFloor, receiverApt, shipmentCOD, shipmentNote);*/
         // check success message
         shipmentsPageObject = new ShipmentsPage(driver);
         try {
@@ -88,15 +88,15 @@ public class CreateNewShipmentTest extends TestBase {
     @Test(dependsOnMethods = "businessUserCanLogin", priority = 4)
     public void businessUserCanCreateNewCrpOrder() {
         newShipmentObject = new CreateNewShipmentPage(driver);
-        driver.navigate().to(envURL + "/shipments/create");
+        driver.navigate().to(ENV_URL + "/shipments/create");
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        newShipmentObject.createCRPShipment(receiverName, receiverPhone, receiverAddress, receiverCity,
+        /*newShipmentObject.createCRPShipment(receiverName, receiverPhone, receiverAddress, receiverCity,
                 receiverZone, receiverBuilding, receiverFloor, receiverApt, shipmentNote, packageType,
-                shipmentNoOfItems, shipmentDescription);
+                shipmentNoOfItems, shipmentDescription);*/
         // check success message
         shipmentsPageObject = new ShipmentsPage(driver);
         try {
@@ -112,13 +112,13 @@ public class CreateNewShipmentTest extends TestBase {
     @Test(dependsOnMethods = "businessUserCanLogin", priority = 5)
     public void businessUserCanCreateExchangeOrder() throws InterruptedException {
         newShipmentObject = new CreateNewShipmentPage(driver);
-        driver.navigate().to(envURL + "/shipments/create");
+        driver.navigate().to(ENV_URL + "/shipments/create");
         Thread.sleep(2000);
 
-        newShipmentObject.createNewExchangeShipment(
+       /* newShipmentObject.createNewExchangeShipment(
                 receiverName, receiverPhone, receiverAddress, receiverCity, receiverZone,
                 receiverBuilding, receiverFloor, receiverApt, packageType, shipmentNoOfItems,
-                shipmentDescription, shipmentNote, shipmentCOD);
+                shipmentDescription, shipmentNote, shipmentCOD);*/
         // check success message
         shipmentsPageObject = new ShipmentsPage(driver);
         Thread.sleep(2000);
@@ -132,7 +132,7 @@ public class CreateNewShipmentTest extends TestBase {
     public void businessUserCanLogout() throws InterruptedException {
         //shipmentsPageObject = new ShipmentsPage(driver);
         //shipmentsPageObject.logout();
-        driver.navigate().to(envURL + "/logout");
+        driver.navigate().to(ENV_URL + "/logout");
         Thread.sleep(2000);
         Assert.assertTrue(driver.getCurrentUrl().contains("/signin"));
     }

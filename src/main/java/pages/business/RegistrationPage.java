@@ -1,5 +1,6 @@
 package pages.business;
 
+import com.github.javafaker.Faker;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,7 +10,7 @@ import java.text.DecimalFormat;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class RegistrationPage extends PageBase{
+public class RegistrationPage extends PageBase {
 
     public RegistrationPage(WebDriver driver) {
         super(driver);
@@ -69,24 +70,19 @@ public class RegistrationPage extends PageBase{
     @FindBy(css = "div.header-sign")
     public WebElement bostaHeaderSection;
 
-    public void createNewBusinessUser() throws InterruptedException {
-        /* generate random business number */
-        int rand_business_num = ThreadLocalRandom.current().nextInt(5000);
-        /* generate random phone number */
-        Random rand = new Random();
-        int num1 = rand.nextInt(9999);
-        int num2 = rand.nextInt(9999);
-        DecimalFormat df4 = new DecimalFormat("0000"); // 4 zeros
-        String randPhoneNumber = "011" + df4.format(num1) + df4.format(num2);
+    public void createNewBusinessUser(
+            String fakeFullName, String fakeEmail, String fakePassword,
+            String fakeMobile, String fakeBusiness, String fakeBostaCode, String fakeAddress)
+            throws InterruptedException {
 
         /* registration steps  */
-        setTextElement(businessNameTxt, "Auto " + rand_business_num);
+        setTextElement(businessNameTxt, fakeBusiness);
         Select selectCategory = new Select(categoryList);
         selectCategory.selectByVisibleText("Facebook Seller");
-        setTextElement(bostaCodeTxt, "2354");
+        setTextElement(bostaCodeTxt, fakeBostaCode);
         Select selectHearAboutUs = new Select(hearAboutUsList);
         selectHearAboutUs.selectByVisibleText("Google");
-        setTextElement(addressLineTxt, "Makram");
+        setTextElement(addressLineTxt, fakeAddress);
         Select selectCity = new Select(citiesList);
         selectCity.selectByVisibleText("Cairo");
         Thread.sleep(2000);
@@ -97,9 +93,9 @@ public class RegistrationPage extends PageBase{
         setTextElement(aptTxt, "2");
         clickButton(continueBtn);
 
-        setTextElement(nameTxt, "Auto " + rand_business_num);
-        setTextElement(emailTxt, "selenium."+rand_business_num+"@gmail.com");
-        setTextElement(phoneTxt, randPhoneNumber);
+        setTextElement(nameTxt, fakeFullName);
+        setTextElement(emailTxt, fakeEmail);
+        setTextElement(phoneTxt, fakeMobile);
         setTextElement(passwordTxt, "12345678");
         setTextElement(confirmPasswordTxt, "12345678");
 

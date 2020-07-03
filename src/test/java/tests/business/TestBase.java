@@ -1,5 +1,6 @@
 package tests.business;
 
+import io.cucumber.testng.AbstractTestNGCucumberTests;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
@@ -10,15 +11,15 @@ import utilities.Helper;
 
 import java.util.concurrent.TimeUnit;
 
-public class TestBase {
+public class TestBase extends AbstractTestNGCucumberTests {
     public static WebDriver driver;
 
     /* Shared Test Data*/
     // login data
     /*  Staging */
-    public String envURL = "https://stg-business.bosta.co";
-    public String businessEmail = "selenium.883@gmail.com";
-    public String businessPassword = "12345678";
+    public String ENV_URL = "https://stg-business.bosta.co";
+    public String BUSINESS_EMAIL = "selenium.883@gmail.com";
+    public String BUSINESS_PASSWORD = "12345678";
     /* production */
    /* String envURL = "https://business.bosta.co";
     String businessEmail = "hania.helmi@bosta.co";
