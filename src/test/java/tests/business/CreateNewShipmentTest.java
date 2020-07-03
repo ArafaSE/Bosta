@@ -7,17 +7,6 @@ import pages.business.LoginPage;
 import pages.business.ShipmentsPage;
 
 public class CreateNewShipmentTest extends TestBase {
-    /* ************************ Define Test data ************************* */
-
-    // define receiver data
-    String receiverName = "Regression Test", receiverPhone = "01090493052", receiverAddress = "6 Elgalaa st";
-    String receiverCity = "Cairo", receiverZone = "Abbassia";
-    String receiverBuilding = "3", receiverFloor = "2", receiverApt = "1";
-    // define shipment data
-    String shipmentNoOfItems = "2", shipmentDescription = "selenium test description";
-    String packageType = "Small Box", shipmentCOD = "159";
-    String shipmentNote = "this is automated shipment by selenium webDriver";
-
     /* ************************ page objects *************************** */
     CreateNewShipmentPage newShipmentObject;
     ShipmentsPage shipmentsPageObject;
@@ -37,73 +26,48 @@ public class CreateNewShipmentTest extends TestBase {
 
     // 2. create forward/ send delivery
     @Test(dependsOnMethods = "businessUserCanLogin", priority = 2)
-    public void businessUserCanCreateSendShipments() {
+    public void businessUserCanCreateSendShipments() throws InterruptedException {
         newShipmentObject = new CreateNewShipmentPage(driver);
         driver.navigate().to(ENV_URL + "/shipments/create");
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        /*newShipmentObject.createNewSendShipment(
-                receiverName, receiverPhone, receiverAddress, receiverCity, receiverZone,
-                receiverBuilding, receiverFloor, receiverApt, packageType, shipmentNoOfItems,
-                shipmentDescription, shipmentNote, shipmentCOD);*/
+        Thread.sleep(2000);
+
+        newShipmentObject.createNewSendShipment();
         // check success message
         shipmentsPageObject = new ShipmentsPage(driver);
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Thread.sleep(2000);
+
         Assert.assertTrue(shipmentsPageObject.successMessage.getText()
                 .contains("Your shipment has been created. Tracking No"));
     }
 
     // 3. create Cash collection delivery
     @Test(dependsOnMethods = "businessUserCanLogin", priority = 3)
-    public void businessUserCanCreateCashCollectionOrder() {
+    public void businessUserCanCreateCashCollectionOrder() throws InterruptedException {
         newShipmentObject = new CreateNewShipmentPage(driver);
         driver.navigate().to(ENV_URL + "/shipments/create");
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        /*newShipmentObject.createNewCashCollection(
-                receiverName, receiverPhone, receiverAddress, receiverCity, receiverZone,
-                receiverBuilding, receiverFloor, receiverApt, shipmentCOD, shipmentNote);*/
+        Thread.sleep(2000);
+
+        newShipmentObject.createNewCashCollection();
         // check success message
         shipmentsPageObject = new ShipmentsPage(driver);
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Thread.sleep(2000);
+
         Assert.assertTrue(shipmentsPageObject.successMessage.getText()
                 .contains("Your shipment has been created. Tracking No"));
     }
 
     // 4. create CRP delivery
     @Test(dependsOnMethods = "businessUserCanLogin", priority = 4)
-    public void businessUserCanCreateNewCrpOrder() {
+    public void businessUserCanCreateNewCrpOrder() throws InterruptedException {
         newShipmentObject = new CreateNewShipmentPage(driver);
         driver.navigate().to(ENV_URL + "/shipments/create");
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        /*newShipmentObject.createCRPShipment(receiverName, receiverPhone, receiverAddress, receiverCity,
-                receiverZone, receiverBuilding, receiverFloor, receiverApt, shipmentNote, packageType,
-                shipmentNoOfItems, shipmentDescription);*/
+        Thread.sleep(2000);
+
+        newShipmentObject.createNewCRPShipment();
         // check success message
         shipmentsPageObject = new ShipmentsPage(driver);
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+        Thread.sleep(2000);
+
         Assert.assertTrue(shipmentsPageObject.successMessage.getText()
                 .contains("Your shipment has been created. Tracking No"));
     }
@@ -115,10 +79,7 @@ public class CreateNewShipmentTest extends TestBase {
         driver.navigate().to(ENV_URL + "/shipments/create");
         Thread.sleep(2000);
 
-       /* newShipmentObject.createNewExchangeShipment(
-                receiverName, receiverPhone, receiverAddress, receiverCity, receiverZone,
-                receiverBuilding, receiverFloor, receiverApt, packageType, shipmentNoOfItems,
-                shipmentDescription, shipmentNote, shipmentCOD);*/
+       newShipmentObject.createNewExchangeShipment();
         // check success message
         shipmentsPageObject = new ShipmentsPage(driver);
         Thread.sleep(2000);
