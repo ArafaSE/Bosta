@@ -20,7 +20,7 @@ public class TestBase extends AbstractTestNGCucumberTests {
 
     /*  Environment variables */
     public String ENV_URL = "https://stg-business.bosta.co";
-    public String BUSINESS_EMAIL = "bosta.bronze@bosta.co";
+    public String BUSINESS_EMAIL = "bosta.diamond@bosta.co";
     public String BUSINESS_PASSWORD = "12345678";
 
     /* *************** */

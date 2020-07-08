@@ -1,6 +1,7 @@
 package pages.business;
 
 import com.github.javafaker.Faker;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,6 +26,9 @@ public class CreatePickupRequestPage extends PageBase {
 
     @FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/main/div/div/div[2]/div/form/button")
     WebElement pickupSubmitBtn;
+
+    @FindBy(xpath = "//*[@id=\"root\"]/div/div[2]/main/div/div/div[2]/div/form/div[2]/button[3]")
+    WebElement setDateBtn;
 
     // variables
     protected String fContactPersonName, fContactPersonPhone, fContactPersonEmail, fPickupNote;

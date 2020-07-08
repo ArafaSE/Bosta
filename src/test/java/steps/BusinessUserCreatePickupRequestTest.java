@@ -22,11 +22,18 @@ public class BusinessUserCreatePickupRequestTest extends TestBase {
     public void userEnterPickupRequestDataAndSubmit() throws InterruptedException {
         createPickupPageObject = new CreatePickupRequestPage(driver);
         createPickupPageObject.createPickupRequest();
-        Thread.sleep(3000);
+        Thread.sleep(1000);
     }
 
     @Then("pickup created successfully message appears")
     public void pickupCreatedSuccessfullyMessageAppears() {
+        Assert.assertEquals(driver.getCurrentUrl(), ENV_URL + "/pickups");
+    }
+
+    @Given("user in the pickups page")
+    public void userInThePickupsPage() throws InterruptedException {
+        driver.navigate().to(ENV_URL + "/pickups");
+        Thread.sleep(1000);
         Assert.assertEquals(driver.getCurrentUrl(), ENV_URL + "/pickups");
     }
 }

@@ -10,3 +10,8 @@ Feature: Business user create new pickups
     Given user redirect to create pickups page
     When user enter pickup request data and submit
     Then pickup created successfully message appears
+
+  Scenario: Business user logout from his account
+    Given user in the pickups page
+    When user click on logout button
+    Then user redirected to login page
