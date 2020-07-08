@@ -18,22 +18,16 @@ import java.util.concurrent.TimeUnit;
 public class TestBase extends AbstractTestNGCucumberTests {
     public static WebDriver driver;
 
-    /* Shared Test Data*/
-    // login data
-    /*  Staging */
+    /*  Environment variables */
     public String ENV_URL = "https://stg-business.bosta.co";
-    public String BUSINESS_EMAIL = "selenium.883@gmail.com";
+    public String BUSINESS_EMAIL = "bosta.bronze@bosta.co";
     public String BUSINESS_PASSWORD = "12345678";
-    /* production */
-   /* String envURL = "https://business.bosta.co";
-    String businessEmail = "hania.helmi@bosta.co";
-    String businessPassword = "111111111";*/
 
     /* *************** */
 
     @BeforeSuite
     @Parameters({"browser"})
-    public void startDriver(@Optional("chrome-headless") String browserName){
+    public void startDriver(@Optional("chrome") String browserName){
         if (browserName.equalsIgnoreCase("chrome")){
             System.setProperty("webdriver.chrome.driver",
                     System.getProperty("user.dir") + "\\drivers\\chromedriver.exe");
