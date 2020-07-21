@@ -1,3 +1,4 @@
+@regression
 Feature: Business user create new shipments
   I want to check that the Business user can create all different types of shipments
 

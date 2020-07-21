@@ -1,5 +1,6 @@
 package utilities;
 
+import com.github.javafaker.Faker;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -14,6 +15,10 @@ public class Helper {
 
     // method to take screenshot when Test Case Failed
     public static void captureScreenshot(WebDriver driver, String screenshotName){
+        Faker fakeUser = new Faker();
+        String fCount = fakeUser.number().digits(3);
+        screenshotName += "_" + fCount;
+
         Path destination = Paths.get("./screenshots",screenshotName + ".png");
         try {
             Files.createDirectories(destination.getParent());

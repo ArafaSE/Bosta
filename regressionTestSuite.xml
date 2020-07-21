@@ -4,8 +4,7 @@
     <parameter name="browser" value="chrome"/>
     <test name="Business Dashboard">
         <classes>
-            <class name="tests.business.UserRegistrationTest"/>
-            <class name="tests.business.CreateNewShipmentTest"/>
+            <class name="runner.RegressionTestRunner"/>
         </classes>
     </test>
 </suite>

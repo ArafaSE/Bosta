@@ -4,6 +4,6 @@
 4. delete shipment
 5. Print Airway pill
 6. Upload shipment File
-7. Create pickup request
+7. Create pickup request                                       -> Done
 8. Edit pickup request
 9. Cancel pickup request

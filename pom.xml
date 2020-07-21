@@ -91,4 +91,22 @@
             <version>1.4.4</version>
         </dependency>
     </dependencies>
+<!--to run our test XML file from command line -->
+    <profiles>
+        <!--  profile for regression test suite -->
+        <profile>
+            <id>regression</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+                <property>
+                    <name>environment</name>
+                    <value>regression</value>
+                </property>
+            </activation>
+            <properties>
+                <testNGSuite>regressionTestSuite.xml</testNGSuite>
+            </properties>
+        </profile>
+
+    </profiles>
 </project>
