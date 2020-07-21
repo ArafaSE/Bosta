@@ -1,11 +1,11 @@
 package runner;
 
 import io.cucumber.testng.CucumberOptions;
-import tests.business.TestBase;
+import tests.TestBase;
 
 @CucumberOptions(
         features = "src/test/java/features/",
         tags = "@regression",
         glue = {"steps"},
-        plugin = {"pretty", "html:target/cucumber-html-report.html"})
+        plugin = {"pretty", "html:cucumber-test-results-report.html"})
 public class RegressionTestRunner extends TestBase {}

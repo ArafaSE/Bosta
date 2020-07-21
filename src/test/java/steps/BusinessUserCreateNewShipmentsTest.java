@@ -8,9 +8,9 @@ import org.testng.Assert;
 import pages.business.CreateNewShipmentPage;
 import pages.business.LoginPage;
 import pages.business.ShipmentsPage;
-import tests.business.TestBase;
+import tests.TestBase;
 
-public class BusinessUserCreateNewShipmentsTest extends TestBase {
+public class BusinessUserCreateNewShipmentsTest extends TestBase{
     LoginPage loginPageObject;
     CreateNewShipmentPage newShipmentPageObject;
     ShipmentsPage shipmentsPageObject;
@@ -83,4 +83,5 @@ public class BusinessUserCreateNewShipmentsTest extends TestBase {
     public void userRedirectedToLoginPage() {
         Assert.assertTrue(driver.getCurrentUrl().contains("/signin"));
     }
+
 }

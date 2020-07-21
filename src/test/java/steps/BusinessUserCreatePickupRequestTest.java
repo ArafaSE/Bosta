@@ -5,7 +5,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
 import pages.business.CreatePickupRequestPage;
-import tests.business.TestBase;
+import tests.TestBase;
 
 public class BusinessUserCreatePickupRequestTest extends TestBase {
 

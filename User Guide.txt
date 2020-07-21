@@ -1,2 +1,2 @@
 run regresssion test suite from command line:
-$ mvn clean test -Pregression
+$ mvn clean test

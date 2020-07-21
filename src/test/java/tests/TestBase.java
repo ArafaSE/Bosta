@@ -1,4 +1,4 @@
-package tests.business;
+package tests;
 
 import io.cucumber.java.AfterStep;
 import io.cucumber.testng.AbstractTestNGCucumberTests;
@@ -76,7 +76,7 @@ public class TestBase extends AbstractTestNGCucumberTests {
     public void screenshotOnFailure(ITestResult result){
         if (result.getStatus() == ITestResult.FAILURE){
             System.out.println("Failed! - Taking screenshots..");
-            Helper.captureScreenshot(driver, result.getName());
+            Helper.captureScreenshot(driver, result.getInstanceName());
         }
     }
 

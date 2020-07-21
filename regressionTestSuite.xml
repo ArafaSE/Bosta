@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite parallel="false" name="Bosta regression suite">
-    <parameter name="browser" value="chrome"/>
+<suite parallel="false" name="Bosta regression test suite">
+    <parameter name="browser" value="chrome-headless"/>
     <test name="Business Dashboard">
         <classes>
             <class name="runner.RegressionTestRunner"/>

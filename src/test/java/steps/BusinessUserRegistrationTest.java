@@ -8,7 +8,7 @@ import io.cucumber.java.en.When;
 import org.testng.Assert;
 import pages.business.LoginPage;
 import pages.business.RegistrationPage;
-import tests.business.TestBase;
+import tests.TestBase;
 
 public class BusinessUserRegistrationTest extends TestBase {
     LoginPage loginPageObject;
