@@ -21,7 +21,7 @@ public class TestBase extends AbstractTestNGCucumberTests {
     public static WebDriver driver;
 
     /*  Environment variables */
-    public String ENV_URL = "https://stg-business.bosta.co";
+    public String ENV_URL = "https://dev-business.bosta.co";
     public String BUSINESS_PASSWORD = "12345678";
 
     public String businessesList[] = {
