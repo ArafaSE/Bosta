@@ -14,6 +14,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.*;
 import utilities.Helper;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase extends AbstractTestNGCucumberTests {
@@ -21,20 +22,31 @@ public class TestBase extends AbstractTestNGCucumberTests {
 
     /*  Environment variables */
     public String ENV_URL = "https://stg-business.bosta.co";
-    public String BUSINESS_EMAIL = "bosta.diamond@bosta.co";
     public String BUSINESS_PASSWORD = "12345678";
+
+    public String businessesList[] = {
+            "bosta.diamond@bosta.co",
+            "bosta.red@bosta.co",
+            "bosta.gold@bosta.co",
+            "bosta.titanium@bosta.co",
+            "bosta.silver@bosta.co",
+            "bosta.bronze@bosta.co"
+    };
+    Random rand = new Random();
+    int rand_user = rand.nextInt(6);
+    public String BUSINESS_EMAIL = businessesList[rand_user];
 
     /* *************** */
 
     @BeforeSuite
     @Parameters({"browser"})
-    public void startDriver(@Optional("chrome") String browserName){
-        if (browserName.equalsIgnoreCase("chrome")){
+    public void startDriver(@Optional("chrome") String browserName) {
+        if (browserName.equalsIgnoreCase("chrome")) {
             System.setProperty("webdriver.chrome.driver",
                     System.getProperty("user.dir") + "\\drivers\\chromedriver.exe");
             System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
             driver = new ChromeDriver();
-        } else if (browserName.equalsIgnoreCase("firefox")){
+        } else if (browserName.equalsIgnoreCase("firefox")) {
             System.setProperty("webdriver.gecko.driver",
                     System.getProperty("user.dir") + "\\drivers\\geckodriver.exe");
             driver = new FirefoxDriver();
@@ -73,8 +85,8 @@ public class TestBase extends AbstractTestNGCucumberTests {
 
     // take screenshot when test case fail and add it in the screenshots folder
     @AfterMethod
-    public void screenshotOnFailure(ITestResult result){
-        if (result.getStatus() == ITestResult.FAILURE){
+    public void screenshotOnFailure(ITestResult result) {
+        if (result.getStatus() == ITestResult.FAILURE) {
             System.out.println("Failed! - Taking screenshots..");
             Helper.captureScreenshot(driver, result.getInstanceName());
         }
