@@ -24,13 +24,15 @@ public class BusinessUserCreateNewShipmentsTest extends TestBase{
     }
 
     @When("user enter valid login credentials and submit")
-    public void userEnterValidLoginCredentialsAndSubmit() {
+    public void userEnterValidLoginCredentialsAndSubmit() throws InterruptedException {
         loginPageObject.businessLogin(BUSINESS_EMAIL, BUSINESS_PASSWORD);
+        Thread.sleep(2000);
     }
 
     @Then("user access shipments page")
     public void userAccessShipmentsPage() throws InterruptedException {
-        Thread.sleep(2000);
+        driver.navigate().to(ENV_URL + "/shipments");
+        Thread.sleep(4000);
         Assert.assertTrue(driver.getCurrentUrl().contains("shipments"));
     }
 
