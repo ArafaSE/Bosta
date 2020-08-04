@@ -72,14 +72,5 @@
     <orderEntry type="library" name="Maven: io.cucumber:cucumber-testng:6.0.0" level="project" />
     <orderEntry type="library" name="Maven: io.cucumber:gherkin:14.0.0" level="project" />
     <orderEntry type="library" name="Maven: com.codeborne:phantomjsdriver:1.4.4" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: io.qameta.allure:allure-cucumber4-jvm:2.13.5" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: io.qameta.allure:allure-java-commons:2.13.5" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: io.qameta.allure:allure-model:2.13.5" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.slf4j:slf4j-api:1.7.30" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.8" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.0" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.8" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.apache.tika:tika-core:1.20" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.jooq:joor-java-8:0.9.10" level="project" />
   </component>
 </module>
