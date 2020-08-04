@@ -102,6 +102,13 @@
             <artifactId>phantomjsdriver</artifactId>
             <version>1.4.4</version>
         </dependency>
+        <!-- Allure report -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-cucumber4-jvm</artifactId>
+            <version>2.13.5</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
 </project>

@@ -3,6 +3,7 @@ target/
 test-output/
 .idea/
 screenshots/
+allure-results/
 cucumber-test-results-report.html
 
 # Compiled source #
