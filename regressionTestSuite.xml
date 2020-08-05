@@ -4,7 +4,7 @@
     <parameter name="browser" value="chrome-headless"/>
     <test name="Business Dashboard">
         <classes>
-            <class name="runner.RegressionTestRunner"/>
+            <class name="runner.CreateNewShipmentsTestRunner"/>
         </classes>
     </test>
 </suite>
